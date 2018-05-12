@@ -9,17 +9,22 @@ body {
   }
 }
 
+.page {
+  min-height: 100vh;
+  width: 100%;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @apply .font-mono .text-grey-darkest;
+  @apply .font-mono .font-bold .text-black;
 }
 
 a {
-  @apply .text-secondary;
+  @apply .text-pink;
   text-decoration: none;
   transition: all 250ms ease-in-out;
   &:hover {
