@@ -1,0 +1,28 @@
+@tailwind preflight;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,500,700');
+
+body {
+  @apply .font-mono .font-light .text-base;
+  @media (max-width: 768px) {
+    @apply .text-sm;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply .font-mono .text-grey-darkest;
+}
+
+a {
+  @apply .text-secondary;
+  text-decoration: none;
+  transition: all 250ms ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
+}
