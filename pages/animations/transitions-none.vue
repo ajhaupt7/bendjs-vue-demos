@@ -1,25 +1,21 @@
 <template>
-  <section class="page">
+  <section class="page flex justify-center items-center">
     <button class="bg-teal-lighter rounded-sm py-4 px-8 shadow-md" @click="toggleShow">
-      <span v-if="!isShowing">Click Me.</span>
+      <span>Click Me.</span>
     </button>
-    <modal v-show="isShowing" class="modal">
-        <a class="close" @click="toggleShow">
-          <x-icon></x-icon>
-        </a>
+    <modal v-if="isShowing" class="modal">
+
     </modal>
   </section>
 </template>
 
 <script>
 import Modal from '~/components/Modal.vue'
-import { XIcon } from 'vue-feather-icons'
 
 export default {
-  name: 'no-transitions',
+  name: 'transitions-none',
   components: {
     Modal,
-    XIcon
   },
   data() {
     return {
@@ -35,5 +31,17 @@ export default {
 </script>
 
 <style>
-
+.modal {
+  background-image: url('https://media.giphy.com/media/jkSvCVEXWlOla/giphy.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 500px;
+  max-height: 80%;
+  max-width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
 </style>
