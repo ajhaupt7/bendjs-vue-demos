@@ -1,52 +1,24 @@
 <template>
   <div>
+    <nuxt-link
+      v-if="$route.name !== 'index'"
+      class="absolute pin-t pin-l p-4 text-xs flex items-center"
+      to="/"
+    >
+      <arrow-left-circle-icon></arrow-left-circle-icon>
+      <span class="ml-2">Back</span>
+    </nuxt-link>
     <nuxt/>
   </div>
 </template>
 
-<style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+import { ArrowLeftCircleIcon } from 'vue-feather-icons'
+export default {
+  name: 'layout-default',
+  components: {
+    ArrowLeftCircleIcon
+  }
 }
+</script>
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-</style>
