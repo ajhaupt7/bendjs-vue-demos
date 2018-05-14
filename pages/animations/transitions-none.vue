@@ -3,9 +3,10 @@
     <button class="bg-teal-lighter rounded-sm py-4 px-8 shadow-md" @click="toggleShow">
       <span>Click Me.</span>
     </button>
-    <modal v-if="isShowing" class="modal">
-
-    </modal>
+    <modal
+      v-if="isShowing"
+      class="modal"
+      @close-click="toggleShow"></modal>
   </section>
 </template>
 

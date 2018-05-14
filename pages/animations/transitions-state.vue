@@ -15,15 +15,14 @@
       </button>
     </div>
     <transition name="card" mode="out-in" appear>
-      <div v-if="!selectedCard" key="noCard">Click the teal button in the bottom right to start.</div>
-      <card v-else :key="selectedCard.id" v-bind="selectedCard" />
+      <div v-if="!selectedCardId" key="noCard">Click the teal button in the bottom right to start.</div>
+      <card v-else :key="selectedCardId" v-bind="cards[selectedCardId]" />
     </transition>
   </div>
 </template>
 
 <script>
 import Card from '~/components/Card.vue'
-import random from 'lodash/random'
 import { RepeatIcon, XIcon } from 'vue-feather-icons'
 
 export default {
@@ -38,31 +37,25 @@ export default {
       names: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'],
       suits: ['♥','♦','♠','♣'],
       cards: [],
-      selectedCard: null,
+      selectedCardId: null,
     }
   },
   methods: {
     randomCard() {
-      return this.cards[random(this.cards.length - 1)]
+      return Object.keys(this.cards)[Math.floor(Math.random() * Object.keys(this.cards).length)];
     },
     changeCard() {
-      this.selectedCard = this.randomCard()
+      this.selectedCardId = this.randomCard()
     },
     resetCards() {
-      this.selectedCard = null;
+      this.selectedCardId = null;
     }
   },
   mounted() {
-    this.cards = this.suits.reduce((cards, suit, suitIndex) => {
-      return [...cards,  ...this.names.map((name, nameIndex) => {
-        return  {
-          id: nameIndex + cards.length,
-          value: nameIndex + 1,
-          name,
-          suit
-        }
-      })]
-    }, [])
+    this.cards = this.suits.reduce((cards, suit) => {
+      this.names.map(name => cards[`${name}${suit}`] = { name, suit })
+      return cards
+    }, {})
   }
 }
 </script>

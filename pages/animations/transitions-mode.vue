@@ -16,15 +16,14 @@
     </div>
     <!-- When toggling between elements that have the same tag name, you must tell Vue that they are distinct elements by giving them unique key attributes. Otherwise, Vue’s compiler will only replace the content of the element for efficiency. Even when technically unnecessary though, it’s considered good practice to always key multiple items within a <transition> component. -->
     <transition name="card" mode="out-in" appear>
-      <div v-if="!selectedCard" key="noCard">Click the teal button in the bottom right to start.</div>
-      <div v-else key="hasCard"><card v-bind="selectedCard" /></div>
+      <div v-if="!selectedCardId" key="noCard">Click the teal button in the bottom right to start.</div>
+      <div v-else key="hasCard"><card v-bind="cards[selectedCardId]" /></div>
     </transition>
   </div>
 </template>
 
 <script>
 import Card from '~/components/Card.vue'
-import random from 'lodash/random'
 import { RepeatIcon, XIcon } from 'vue-feather-icons'
 
 export default {
@@ -39,31 +38,25 @@ export default {
       names: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'],
       suits: ['♥','♦','♠','♣'],
       cards: [],
-      selectedCard: null,
+      selectedCardId: null,
     }
   },
   methods: {
     randomCard() {
-      return this.cards[random(this.cards.length - 1)]
+      return Object.keys(this.cards)[Math.floor(Math.random() * Object.keys(this.cards).length)];
     },
     changeCard() {
-      this.selectedCard = this.randomCard()
+      this.selectedCardId = this.randomCard()
     },
     resetCards() {
-      this.selectedCard = null;
+      this.selectedCardId = null;
     }
   },
   mounted() {
-    this.cards = this.suits.reduce((cards, suit, suitIndex) => {
-      return [...cards,  ...this.names.map((name, nameIndex) => {
-        return  {
-          id: nameIndex + cards.length,
-          value: nameIndex + 1,
-          name,
-          suit
-        }
-      })]
-    }, [])
+    this.cards = this.suits.reduce((cards, suit) => {
+      this.names.map(name => cards[`${name}${suit}`] = { name, suit })
+      return cards
+    }, {})
   }
 }
 </script>
