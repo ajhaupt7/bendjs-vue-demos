@@ -1,12 +1,16 @@
 <template>
   <section class="page flex justify-center items-center">
-    <button class="bg-teal-lighter rounded-sm py-4 px-8 shadow-md" @click="toggleShow">
+    <button
+      class="bg-teal-lighter rounded-sm py-4 px-8 shadow-md"
+      @click="toggleShow"
+    >
       <span>Click Me.</span>
     </button>
     <modal
       v-if="isShowing"
       class="modal"
-      @close-click="toggleShow"></modal>
+      @close-click="toggleShow"
+    ></modal>
   </section>
 </template>
 

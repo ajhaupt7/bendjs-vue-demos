@@ -22,7 +22,7 @@
       </button>
     </div>
     <transition name="card" mode="out-in" appear>
-      <div v-if="!addedCards.length" key="noCard">Click the teal button in the bottom right to start.</div>
+      <div v-if="!addedCards.length" key="noCard">Click the teal button in the bottom right to add a card.</div>
       <div v-else class="w-full px-4">
         <transition-group name="card" tag="div" class="deck justify-center flex flex-wrap">
           <card v-for="cardId in addedCards" :key="cardId" v-bind="cards[cardId]" class="m-2" />
@@ -90,7 +90,8 @@ button {
 
 .card-enter-active,
 .card-leave-active,
-.card-move {
+.card-move
+{
   transition: all 650ms ease-in-out;
   opacity: 1;
 }
@@ -100,6 +101,4 @@ button {
   opacity: 0;
   transform: translateY(-500%);
 }
-
-
 </style>

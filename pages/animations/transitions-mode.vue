@@ -15,9 +15,9 @@
       </button>
     </div>
     <!-- When toggling between elements that have the same tag name, you must tell Vue that they are distinct elements by giving them unique key attributes. Otherwise, Vue’s compiler will only replace the content of the element for efficiency. Even when technically unnecessary though, it’s considered good practice to always key multiple items within a <transition> component. -->
-    <transition name="card" mode="out-in" appear>
+    <transition name="card" mode="out-in">
       <div v-if="!selectedCardId" key="noCard">Click the teal button in the bottom right to start.</div>
-      <div v-else key="hasCard"><card v-bind="cards[selectedCardId]" /></div>
+      <card v-else :key="selectedCardId" v-bind="cards[selectedCardId]" />
     </transition>
   </div>
 </template>

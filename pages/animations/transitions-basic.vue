@@ -7,14 +7,14 @@
     </div>
     <transition name="modal">
       <modal
-        v-show = "isShowing"
-        class = "modal"
-        @close-click = "toggleShow"
+        v-show="isShowing"
+        class="modal"
+        @close-click="toggleShow"
       >
         <input
-          class = "py-4 px-8 rounded-sm shadow-lg text-sm text-center w-full"
-          v-model = "inputText"
-          placeholder = "need credit card info here"
+          class="py-4 px-8 rounded-sm shadow-lg text-sm text-center w-full"
+          v-model="inputText"
+          placeholder="enter credit card info"
         />
       </modal>
     </transition>
@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .blurred {
   filter: blur(2px);
   opacity: 0.4;
@@ -66,12 +66,11 @@ export default {
 .modal-enter-active,
 .modal-leave-active {
   transition: all 650ms ease-in-out;
-  opacity: 1;
 }
 
 .modal-enter,
 .modal-leave-to {
   opacity: 0;
-  transform: translate3d(-50%, -250%, 0);
+  transform: translate3d(-50%, -150%, 0);
 }
 </style>

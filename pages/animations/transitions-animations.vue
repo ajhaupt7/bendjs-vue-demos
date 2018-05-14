@@ -1,15 +1,11 @@
 <template>
   <section class="page flex justify-center items-center bg-grey-lighter">
-    <div :class="{ blurred: isShowing }">
+    <div>
       <button class="bg-teal-lighter rounded-sm py-4 px-8 shadow-md" @click="toggleShow">
         <span>Click Me.</span>
       </button>
     </div>
-    <transition
-      name="modal"
-      enter-active-class="spin-enter"
-      leave-active-class="spin-leave"
-    >
+    <transition name="modal">
       <modal
         v-show="isShowing"
         class="modal"
@@ -48,11 +44,6 @@ export default {
 </script>
 
 <style lang="scss">
-.blurred {
-  filter: blur(2px);
-  opacity: 0.4;
-}
-
 .modal {
   background-image: url('https://media.giphy.com/media/jkSvCVEXWlOla/giphy.gif');
   background-size: cover;
@@ -73,11 +64,11 @@ export default {
   100% { transform: translate3d(-50%, -50%, 0) rotate(1800deg); }
 }
 
-.spin-enter {
+.modal-enter-active {
   animation: spin 2s ease-in-out forwards;
 }
 
-.spin-leave {
+.modal-leave-active {
   animation: spin 2s ease-in-out reverse;
 }
 </style>
