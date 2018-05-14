@@ -8,6 +8,13 @@
         <plus-icon></plus-icon>
       </button>
       <button
+        v-if="addedCards.length > 4"
+        class="bg-pink shadow mr-2 rounded-full text-white flex justify-center items-center"
+        @click="shuffleCards"
+      >
+        <zap-icon></zap-icon>
+      </button>
+      <button
         class="bg-red shadow rounded-full text-white flex justify-center items-center"
         @click="resetCards"
       >
@@ -27,15 +34,16 @@
 
 <script>
 import Card from '~/components/Card.vue'
-import random from 'lodash/random'
-import { PlusIcon, XIcon } from 'vue-feather-icons'
+import shuffle from 'lodash/shuffle'
+import { PlusIcon, XIcon, ZapIcon } from 'vue-feather-icons'
 
 export default {
   name: 'transitions-mode',
   components: {
     Card,
     PlusIcon,
-    XIcon
+    XIcon,
+    ZapIcon
   },
   data() {
     return {
@@ -59,6 +67,9 @@ export default {
     },
     resetCards(){
       this.addedCards = []
+    },
+    shuffleCards() {
+      this.addedCards = shuffle(this.addedCards)
     }
   },
   mounted() {
