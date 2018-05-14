@@ -2,7 +2,7 @@
   <div>
     <nuxt-link
       v-if="$route.name !== 'index'"
-      class="absolute pin-t pin-l p-4 text-xs flex items-center"
+      class="absolute z-50 pin-t pin-l p-4 text-xs flex items-center"
       to="/"
     >
       <arrow-left-circle-icon></arrow-left-circle-icon>
