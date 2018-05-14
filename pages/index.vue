@@ -1,22 +1,27 @@
 <template>
-  <section class="page flex flex-col justify-center items-center">
+  <section class="page bg-grey-lightest flex flex-col justify-center items-center">
     <div class="py-4">
       <h1 class="title">
         Different Points of Vue
       </h1>
     </div>
-    <div class="links py-4">
-      <div
-        v-for = "route in $router.options.routes"
-        :key  = "route.name"
-        class = "p-2"
-      >
-      <nuxt-link
-        v-if  = "route.name !== 'index'"
-        :to   = "route.path"
-      >
-        {{route.name}}
-      </nuxt-link>
+    <div class="links py-4 flex justify-between">
+      <div class="px-8 text-right">
+        <h2>Animations</h2>
+        <div class="py-2">
+          <nuxt-link class="block py-2" to="/animations/transitions-none">No Transitions</nuxt-link>
+          <nuxt-link class="block py-2" to="/animations/transitions-basic">Basic Transitions</nuxt-link>
+          <nuxt-link class="block py-2" to="/animations/transitions-animations">Basic Animations</nuxt-link>
+          <nuxt-link class="block py-2" to="/animations/transitions-mode">Transition Modes</nuxt-link>
+          <nuxt-link class="block py-2" to="/animations/transitions-state">Transitioning State</nuxt-link>
+          <nuxt-link class="block py-2" to="/animations/transitions-groups">Transition Groups</nuxt-link>
+        </div>
+      </div>
+      <div class="px-8">
+        <h2>Whack a Gopher</h2>
+        <div class="py-2">
+          <nuxt-link class="block py-2" to="/whack-a-gopher">Play</nuxt-link>
+        </div>
       </div>
     </div>
   </section>
