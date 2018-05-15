@@ -13,7 +13,6 @@
           <nuxt-link class="block py-2" to="/animations/transitions-basic">Basic Transitions</nuxt-link>
           <nuxt-link class="block py-2" to="/animations/transitions-animations">Basic Animations</nuxt-link>
           <nuxt-link class="block py-2" to="/animations/transitions-mode">Transition Modes</nuxt-link>
-          <nuxt-link class="block py-2" to="/animations/transitions-state">Transitioning State</nuxt-link>
           <nuxt-link class="block py-2" to="/animations/transitions-groups">Transition Groups</nuxt-link>
         </div>
       </div>
