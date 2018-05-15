@@ -7,3 +7,4 @@ export const levels = {
 export const BASE_GOPHER_HOLE_COUNT = 6
 
 export const GOPHER_AIR_TIME = 3
+

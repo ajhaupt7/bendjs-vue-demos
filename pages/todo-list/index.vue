@@ -8,6 +8,8 @@
       @keyup.enter="addItemToList"
       :class="$style.input" />
 
+    <celebrate-good-times v-show="isCelebrating" />
+
     <todo-list
       v-show="hasIncompleteTodos"
       title="Incomplete Todos"
@@ -19,19 +21,24 @@
       title="Completed Todos"
       :todos="completedTodos"
       @click-todo-item="toggleItemCompleted" />
+
   </div>
 </template>
 
 <script>
+import faker from 'faker';
+import CelebrateGoodTimes from '~/components/todo-list/celebrate-good-times.vue';
 import TodoList from '~/components/todo-list/todo-list.vue';
 
 export default {
   components: {
+    CelebrateGoodTimes,
     TodoList,
   },
 
   data() {
     return {
+      isCelebrating: false,
       todoItem: '',
       todoItems: [
         { name: "Blow people's minds 💥", completed: true },
@@ -71,7 +78,28 @@ export default {
     toggleItemCompleted(todoItem) {
       todoItem.completed = !todoItem.completed;
     },
+
+    potentiallyCelebrateGoodTimesForALittleWhile(newVal, oldVal) {
+      if (oldVal > 0 && newVal === 0) {
+        this.isCelebrating = true;
+
+        setTimeout(this.resetAndSeed, 10000);
+      } else {
+        this.isCelebrating = false;
+      }
+    },
+
+    resetAndSeed() {
+      this.isCelebrating = false;
+      [...Array(50).keys()].forEach(() => {
+        this.todoItems.push({ name: faker.lorem.sentence(), completed: false });
+      });
+    }
   },
+
+  watch: {
+    'incompleteTodos.length': 'potentiallyCelebrateGoodTimesForALittleWhile'
+  }
 }
 </script>
 

@@ -23,7 +23,7 @@
           <nuxt-link class="block py-2" to="/whack-a-gopher">Play</nuxt-link>
         </div>
       </div>
-      <div>
+      <div class="px-8">
         <h2>TodoList</h2>
         <div class="py-2">
           <nuxt-link class="block py-2" to="/todo-list">Todo List App</nuxt-link>
