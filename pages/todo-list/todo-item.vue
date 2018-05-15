@@ -20,7 +20,7 @@ export default {
 
   data() {
     return {
-      todoItemToPassToComponent: { name: "Play it cool", completed: false },
+      todoItemToPassToComponent: { name: "Impress everyone", completed: false },
     }
   },
 

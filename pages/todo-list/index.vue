@@ -33,7 +33,12 @@ export default {
   data() {
     return {
       todoItem: '',
-      todoItems: [],
+      todoItems: [
+        { name: "Blow people's minds 💥", completed: true },
+        { name: "Make a baller presentation 🏈🏀🎱", completed: true },
+        { name: "Feel accomplished 🏋🏽‍♂️", completed: true },
+        { name: "Remind Yong this presentation counts for 1pt of my grade 🤓", completed: false },
+      ],
     }
   },
 

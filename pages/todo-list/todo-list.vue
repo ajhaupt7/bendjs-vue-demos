@@ -24,7 +24,7 @@ export default {
       todoItems: [
         { name: "Pretend to what I'm talking about", completed: false },
         { name: "Look smart", completed: false },
-        { name: "Or at least look smarter than Andrew...", completed: true },
+        { name: "Or at least look smarter than Andrew 😎", completed: true },
       ],
     }
   },
