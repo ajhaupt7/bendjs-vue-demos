@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute pin-b pin-r p-6 flex items-center">
+  <div class="absolute pin-b pin-r p-6 flex items-center z-50">
     <button
       v-for="(button, index) in buttons"
       :key="index"

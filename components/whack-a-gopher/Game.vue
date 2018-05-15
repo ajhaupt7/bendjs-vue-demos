@@ -6,7 +6,7 @@
     </div>
     <button
       class="absolute z-50 flex items-center justify-center pin-r pin-b m-4 bg-red text-white shadow-lg rounded-full"
-      @click="endGame"
+      @click.stop="endGame"
     >
       <x-icon></x-icon>
     </button>
