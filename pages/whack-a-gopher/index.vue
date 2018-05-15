@@ -2,7 +2,7 @@
   <div class="page leading-loose bg-grey-lighter">
     <game v-if="gameInProgress" />
     <div v-else class="min-w-screen min-h-screen flex flex-col justify-center items-center">
-      <h1>Whack a Golang Gopher</h1>
+      <h1>Whack a Gopher</h1>
       <div>
         <img class="gopher-logo mt-4" src="gopher-side.svg" />
       </div>
@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import Scoreboard from '~/components/WhackAGopher/Scoreboard.vue'
-import Game from '~/components/WhackAGopher/Game.vue'
-import Settings from '~/components/WhackAGopher/Settings.vue'
-import Buttons from '~/components/WhackAGopher/Buttons.vue'
+import Scoreboard from '~/components/whack-a-gopher/Scoreboard.vue'
+import Game from '~/components/whack-a-gopher/Game.vue'
+import Settings from '~/components/whack-a-gopher/Settings.vue'
+import Buttons from '~/components/whack-a-gopher/Buttons.vue'
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
