@@ -10,7 +10,7 @@
       <img
         v-show="isFiring"
         class="gopher z-50 w-full relative p-2"
-        src="gopher.svg"
+        src="/gopher.svg"
         @click.stop="hammerThatGopher($event)"
       />
     </transition>

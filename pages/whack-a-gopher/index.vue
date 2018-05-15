@@ -4,7 +4,7 @@
     <div v-else class="min-w-screen min-h-screen flex flex-col justify-center items-center">
       <h1>Whack a Gopher</h1>
       <div>
-        <img class="gopher-logo mt-4" src="gopher-side.svg" />
+        <img class="gopher-logo mt-4" src="/gopher-side.svg" />
       </div>
       <scoreboard
         class="mt-4 font-bold text-lg text-center"
