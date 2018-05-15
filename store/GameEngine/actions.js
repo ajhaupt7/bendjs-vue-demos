@@ -14,6 +14,4 @@ export const countdown = ({ state, commit }) => {
   const timeRemaining = state.timeRemaining - 1
   commit('setTimeRemaining', timeRemaining > 0 ? timeRemaining : 0)
 }
-export const setScore = (state, points) => {
-  state.score = state.score + points
-}
+

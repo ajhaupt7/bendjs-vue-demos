@@ -3,7 +3,6 @@
     <transition
       name="gopher"
       :css="false"
-      @before-enter="beforeEnter"
       @enter="enter"
       @leave="leave"
     >
@@ -50,9 +49,6 @@ export default {
     handleCompleteAnimation(done) {
       this.firing = false
       done();
-    },
-    beforeEnter(el) {
-
     },
     enter(el, done) {
       TweenLite.to(el, GOPHER_AIR_TIME, {

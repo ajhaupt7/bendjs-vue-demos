@@ -7,7 +7,7 @@
       <span>Click Me.</span>
     </button>
     <modal
-      v-if="isShowing"
+      v-show="isShowing"
       class="modal"
       @close-click="toggleShow"
     ></modal>
