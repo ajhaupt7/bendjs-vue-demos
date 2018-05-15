@@ -10,7 +10,13 @@
       v-show="isShowing"
       class="modal"
       @close-click="toggleShow"
-    ></modal>
+    >
+      <input
+        class="py-4 px-8 rounded-sm shadow-lg text-sm text-center w-full"
+        v-model="inputText"
+        placeholder="need credit card info here"
+      />
+    </modal>
   </section>
 </template>
 
@@ -24,7 +30,8 @@ export default {
   },
   data() {
     return {
-      isShowing: false
+      isShowing: false,
+      inputText: ''
     }
   },
   methods: {
