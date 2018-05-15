@@ -20,6 +20,7 @@
 import { GOPHER_AIR_TIME } from '~/constants'
 import { mapState, mapMutations } from 'vuex'
 import random from 'lodash/random'
+import { TweenLite } from 'gsap'
 
 export default {
   name: 'gopher-hole',

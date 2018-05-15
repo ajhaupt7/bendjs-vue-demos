@@ -14,7 +14,6 @@
 <script>
 import { PlayIcon, SettingsIcon } from 'vue-feather-icons'
 import { mapState, mapMutations, mapActions } from 'vuex'
-import { TweenLite } from "gsap";
 
 export default {
   name: 'settings',

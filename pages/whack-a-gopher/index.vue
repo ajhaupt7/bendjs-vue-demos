@@ -24,7 +24,7 @@ import Scoreboard from '~/components/whack-a-gopher/Scoreboard.vue'
 import Game from '~/components/whack-a-gopher/Game.vue'
 import Settings from '~/components/whack-a-gopher/Settings.vue'
 import Buttons from '~/components/whack-a-gopher/Buttons.vue'
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   components: {

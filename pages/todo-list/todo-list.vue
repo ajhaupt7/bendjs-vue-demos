@@ -30,13 +30,6 @@ export default {
   },
 
   methods: {
-    addItemToList() {
-      if (this.todoItem !== '') {
-        this.todoItems.push({ name: this.todoItem, completed: false });
-        this.todoItem = '';
-      }
-    },
-
     toggleItemCompleted(todoItem) {
       todoItem.completed = !todoItem.completed;
     },
