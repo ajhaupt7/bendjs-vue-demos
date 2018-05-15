@@ -30,7 +30,7 @@ export default {
     TodoList,
   },
 
-  data () {
+  data() {
     return {
       todoItem: '',
       todoItems: [],
@@ -56,7 +56,7 @@ export default {
   },
 
   methods: {
-    addItemToList () {
+    addItemToList() {
       if (this.todoItem !== '') {
         this.todoItems.push({ name: this.todoItem, completed: false });
         this.todoItem = '';
