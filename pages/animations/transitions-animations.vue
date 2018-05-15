@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .modal {
   background-image: url('https://media.giphy.com/media/jkSvCVEXWlOla/giphy.gif');
   background-size: cover;

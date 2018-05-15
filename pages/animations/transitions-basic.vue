@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .blurred {
   filter: blur(2px);
   opacity: 0.4;

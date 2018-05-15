@@ -14,7 +14,8 @@
       <input
         class="py-4 px-8 rounded-sm shadow-lg text-sm text-center w-full"
         v-model="inputText"
-        placeholder="need credit card info here"
+        type="email"
+        placeholder="need email"
       />
     </modal>
   </section>
